@@ -26,6 +26,7 @@ public class QiitaCrawlerTest {
             assertNotNull(article.getTitle());
             assertNotNull(article.getUuid());
             assertNotNull(article.getUserImageUrl());
+            assertNotNull(article.getUpdateDate());
         });
     }
 
