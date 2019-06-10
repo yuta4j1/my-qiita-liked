@@ -24,7 +24,6 @@ public class MyLikedArticleController {
      */
     @RequestMapping(method = RequestMethod.GET, value = "/list")
     public List<ArticleJson> fetchLikedArticleInfo(@RequestParam("uid") String uid) {
-        System.out.println("get uid: " + uid);
         String baseUrl = "https://qiita.com/" + uid + "/like";
         QiitaCrawler firstCrawler = new QiitaCrawler(baseUrl);
         int pageNum = firstCrawler.getAllPageNum();
