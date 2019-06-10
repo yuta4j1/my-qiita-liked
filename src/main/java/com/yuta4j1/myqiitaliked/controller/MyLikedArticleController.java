@@ -4,6 +4,7 @@ import com.yuta4j1.myqiitaliked.crawler.QiitaCrawler;
 import com.yuta4j1.myqiitaliked.model.ArticleJson;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -22,8 +23,9 @@ public class MyLikedArticleController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, value = "/list")
-    public List<ArticleJson> fetchLikedArticleInfo() {
-        String baseUrl = "https://qiita.com/ggggoooo/like";
+    public List<ArticleJson> fetchLikedArticleInfo(@RequestParam("uid") String uid) {
+        System.out.println("get uid: " + uid);
+        String baseUrl = "https://qiita.com/" + uid + "/like";
         QiitaCrawler firstCrawler = new QiitaCrawler(baseUrl);
         int pageNum = firstCrawler.getAllPageNum();
         List<ArticleJson> resultList = new ArrayList<>();
