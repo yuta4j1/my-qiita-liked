@@ -19,7 +19,7 @@ dependencies {
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compile 'org.jsoup:jsoup:1.11.3'
+	compile 'org.jsoup:jsoup:1.12.1'
 }
 
 
